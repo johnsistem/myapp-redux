@@ -1,7 +1,8 @@
-import { GET_SAMPLE, SAMPLE_ERROR } from "../types";
+import { GET_SAMPLE, SAMPLE_ERROR, SUMA_SAMPLE } from "../types";
 
 const initialState = {
 	sample: [],
+	sum:Number,
 	loading: true,
 };
 
@@ -11,6 +12,12 @@ const sampleReducer = (state = initialState, action) => {
 			return {
 				...state,
 				sample: action.payload,
+				loading: false,
+			};
+		case SUMA_SAMPLE:
+			return {
+				...state,
+				sum: action.payload,
 				loading: false,
 			};
 

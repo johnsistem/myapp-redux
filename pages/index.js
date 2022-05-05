@@ -15,7 +15,8 @@ export default function Home() {
 
 const dispatch = useDispatch();
 const sampleListData = useSelector((state) => state.sampleData);
-const { sample } = sampleListData;
+//const sampleSum = useSelector((state) => state.sampleData);
+const { sample,sum } = sampleListData;
 useEffect(() => {
 	dispatch(getSampleData());
 }, [dispatch]);
@@ -61,6 +62,6 @@ useEffect(() => {
 				</a>
 			</footer>
 		</div> */
-		<h3>{JSON.stringify(sample)}</h3>
+		<h3>{JSON.stringify(sum)}</h3>
   );
 }
