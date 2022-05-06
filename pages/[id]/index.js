@@ -1,10 +1,18 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+//REDUX
+import actionNumber from "../../store/actions/numberAction.js"
 import { Image } from 'next/image';
+import { useDispatch, useSelector } from "react-redux";
 
-const index = ({data}) => {
+
+const index = ({ data }) => {
+	
+
   return (
 		<div>
-			<h1>USERS:</h1>
+		  <h1>USERS:</h1>
+
+		  
 			{data.data.map((user) => {
         return (
 				// eslint-disable-next-line react/jsx-key

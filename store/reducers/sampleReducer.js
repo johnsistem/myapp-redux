@@ -14,12 +14,7 @@ const sampleReducer = (state = initialState, action) => {
 				sample: action.payload,
 				loading: false,
 			};
-		case SUMA_SAMPLE:
-			return {
-				...state,
-				sum: action.payload,
-				loading: false,
-			};
+		
 
 		case SAMPLE_ERROR:
 			return {

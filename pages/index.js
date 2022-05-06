@@ -23,12 +23,9 @@ useEffect(() => {
 
 
   return (
-		/* 	<div className={styles.container}>
-			
-
+			<div className={styles.container}>
 			<main className={styles.main}>
 				
-
 				<div className={styles.grid}>
 					<Link href='123'>
 						<a href="https://nextjs.org/docs" className={styles.card}>
@@ -38,9 +35,18 @@ useEffect(() => {
 								API.
 							</p>
 						</a>
-					</Link>
-				
+					</Link>					
+				</div>
+				<div className={styles.grid}>
 					
+						<a href="./contact" className={styles.card}>
+							<h2>NEW PAGE &rarr;</h2>
+							<p>
+								Find in-depth information about Next.js features and
+								API.
+							</p>
+						</a>
+										
 				</div>
 			</main>
 
@@ -60,8 +66,9 @@ useEffect(() => {
 						/>
 					</span>
 				</a>
-			</footer>
-		</div> */
-		<h3>{JSON.stringify(sum)}</h3>
+		  </footer>
+		  </div>
+		
+		
   );
 }
