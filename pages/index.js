@@ -12,7 +12,6 @@ import { setUsersData }  from "../store/actions/usersAction.js";
 import { useEffect } from "react";
 
 
-
 export default function Home() {
 
 const dispatch = useDispatch();
@@ -26,7 +25,7 @@ const usersList = useSelector((state) => state.usersData);
 			.catch((err) => {
 				console.log("err:", err);
 			});
-		console.log(response.data);
+		//console.log(response.data);
 		dispatch(setUsersData(response.data));
 		
 	 }
@@ -38,12 +37,11 @@ const usersList = useSelector((state) => state.usersData);
 }, []);
 
 	console.log("lista de usuarios:",users);
-  return (
-			<div className={styles.container}>
+	return (
+		<div className={styles.container}>
 			<main className={styles.main}>
-				
 				<div className={styles.grid}>
-					<Link href='123'>
+					<Link href="123">
 						<a href="https://nextjs.org/docs" className={styles.card}>
 							<h2>Documentation &rarr;</h2>
 							<p>
@@ -51,18 +49,27 @@ const usersList = useSelector((state) => state.usersData);
 								API.
 							</p>
 						</a>
-					</Link>					
+					</Link>
 				</div>
 				<div className={styles.grid}>
-					
-						<a href="./contact" className={styles.card}>
-							<h2>NEW PAGE &rarr;</h2>
-							<p>
-								Find in-depth information about Next.js features and
-								API.
-							</p>
-						</a>
-										
+					<a href="./contact" className={styles.card}>
+						<h2>NEW PAGE &rarr;</h2>
+						<p>
+							Find in-depth information about Next.js features and API.
+						</p>
+					</a>
+				</div>
+				<div>
+					{users.map((user) => (
+						
+						<div key={user.id}>
+							<Link href={`/${user.id}`} passHref>
+
+								{user.username}
+							</Link>
+								</div>
+						
+					))}
 				</div>
 			</main>
 
@@ -82,9 +89,7 @@ const usersList = useSelector((state) => state.usersData);
 						/>
 					</span>
 				</a>
-		  </footer>
-		  </div>
-		
-		
-  );
+			</footer>
+		</div>
+	);
 }

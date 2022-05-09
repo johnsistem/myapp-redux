@@ -9,13 +9,16 @@ import UsersList from "../../componentes/UsersList.js";
   
 const index = () => {
 
-  const dispatch = useDispatch();
-  const getUsers = useSelector((state) => state.usersData);
-  const { users } = getUsers;
+  //const dispatch = useDispatch();
+  //const getUsers = useSelector((state) => state.usersData);
+  //const { users } = getUsers;
   //console.log(getUsers);
   /* useEffect(() => {
 		dispatch(getNumberData());
   }, [dispatch]); */
+
+
+
 
   return (
 
