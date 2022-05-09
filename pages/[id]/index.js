@@ -1,14 +1,18 @@
 import React,{useEffect} from 'react'
 //REDUX
-import actionNumber from "../../store/actions/numberAction.js"
+ import {setUsersData} from "../../store/actions/usersAction.js"
 import { Image } from 'next/image';
 import { useDispatch, useSelector } from "react-redux";
 
 
 const index = ({ data }) => {
 	
+	
 
-  return (
+	return (
+		
+	<>
+		
 		<div>
 		  <h1>USERS:</h1>
 
@@ -47,8 +51,14 @@ const index = ({ data }) => {
 			);
 		
 			})}
-		</div>
-  );
+	  </div>
+			<div>
+				<h1>HOLA</h1>
+	</div>
+	</>
+	)
+	  
+ 
 }
 
 

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import axios from 'axios'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,21 +8,36 @@ import styles from '../styles/Home.module.css'
 
 //REDUX
 import { useDispatch, useSelector } from "react-redux";
-import { getSampleData } from "../store/actions/sampleAction";
+import { setUsersData }  from "../store/actions/usersAction.js";
 import { useEffect } from "react";
+
 
 
 export default function Home() {
 
 const dispatch = useDispatch();
-const sampleListData = useSelector((state) => state.sampleData);
+const usersList = useSelector((state) => state.usersData);
 //const sampleSum = useSelector((state) => state.sampleData);
-const { sample,sum } = sampleListData;
-useEffect(() => {
-	dispatch(getSampleData());
-}, [dispatch]);
+	const {  users } = usersList;
+	
+	//get users
+	const getUsers = async() => {
+		const response = await axios.get("https://fakestoreapi.com/users")
+			.catch((err) => {
+				console.log("err:", err);
+			});
+		console.log(response.data);
+		dispatch(setUsersData(response.data));
+		
+	 }
+	
+	
+	useEffect(() => {
+		getUsers();
+	//dispatch(getSampleData());
+}, []);
 
-
+	console.log("lista de usuarios:",users);
   return (
 			<div className={styles.container}>
 			<main className={styles.main}>

@@ -1,23 +1,17 @@
-import { SAMPLE_ERROR, SUMA_SAMPLE } from "../types";
+import { SAMPLE_ERROR, SET_USERS } from "../types";
 
 
 const initialState = {	
-	user: [
-		{
-			id: 1,
-			name: 'Johnny',
-			age:49
-		}
-	],
+	users: [],
 	loading: true,
 };
 
-const numberReducer = (state = initialState, action) => {
+const getUsersReducer = (state = initialState, action) => {
 	switch (action.type) {		
-		case SUMA_SAMPLE:
+		case SET_USERS:
 			return {
 				...state,
-				sum: action.payload,
+				users: action.payload,
 				loading: false,
 			};
 
@@ -32,4 +26,4 @@ const numberReducer = (state = initialState, action) => {
 	}
 };
 
-export default numberReducer;
+export default getUsersReducer;

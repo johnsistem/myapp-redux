@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import sampleReducer from "./sampleReducer";
-import numberReducer from "./numerReducer";
+import usersReducer from "./usersReducer";
 
 export default combineReducers({
 	sampleData: sampleReducer,
-	numberData:numberReducer
+	usersData: usersReducer
 });

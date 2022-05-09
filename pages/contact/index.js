@@ -1,26 +1,30 @@
 import React, { useEffect } from "react";
+import Users from '../../componentes/UsersList.js' 
 
 
 //REDUX
 import { useDispatch, useSelector } from "react-redux"
-import {getNumberData} from "../../store/actions/numberAction.js"
+import  setUsersData  from "../../store/actions/usersAction.js";
+import UsersList from "../../componentes/UsersList.js";
   
 const index = () => {
 
   const dispatch = useDispatch();
-  const getNumber = useSelector((state) => state.numberData)
-  const { user } = getNumber;
-
-  useEffect(() => {
+  const getUsers = useSelector((state) => state.usersData);
+  const { users } = getUsers;
+  //console.log(getUsers);
+  /* useEffect(() => {
 		dispatch(getNumberData());
-  }, [dispatch]);
+  }, [dispatch]); */
 
   return (
+
 		<div>
 			
-			<h3>Id:{JSON.stringify(user[0].id)}</h3>
-			<h3>Name:{JSON.stringify(user[0].name)}</h3>
-			<h3>Age:{JSON.stringify(user[0].age)}</h3>
+			{/* <h3>Id:{JSON.stringify(users[0].id)}</h3>
+			<h3>Name:{JSON.stringify(users[0].name)}</h3>
+      <h3>Age:{JSON.stringify(users[0].age)}</h3> */}
+      <UsersList/>
 		</div>
   );
 }
