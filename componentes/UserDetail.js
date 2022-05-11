@@ -1,35 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import axios from "axios";
 
 
 
 const UserDetail = () => {
-   const [user, setUser] = useState([]);
-
+   const [user, setUser] = useState([]);	
 	
+const getUsers =useCallback (async () => {
+			// get the data from the api
+			const response=await axios.get(`https://fakestoreapi.com/users/${user}`);
+	//console.log("respuesta", response.data)	
+		setUser(response)
+      },[])
+
 
    useEffect(() => {
-		// declare the async data fetching function
-		const getUsers = async () => {
-			// get the data from the api
-			const data = await axios.get(`https://fakestoreapi.com/users/${1}`);
-
-			// convert data to json
-			const json = await data.json();
-			return json;
-      };
-      
-      // call the function
-  const result = getUsers()
-		// make sure to catch any error
-		.catch(console.error);;
-
-
+		getUsers();
 		
 	}, []);
+
+
+
 	return (
       <div>
-         {user.username}
+   {console.log(user)}
 			{/*  {users.map((user) => {
 					
 					return (

@@ -27,9 +27,7 @@ const index = () => {
 
 				
 			</div>
-			<div>
-				<h1>HOLA</h1>
-			</div>
+			
 		</>
 	);
 }
