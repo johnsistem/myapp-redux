@@ -45,7 +45,7 @@ const usersList = useSelector((state) => state.usersData);
 						<a href="https://nextjs.org/docs" className={styles.card}>
 							<h2>Documentation &rarr;</h2>
 							<p>
-								holaaaaaa
+								{/* cambios en main */}
 							</p>
 						</a>
 					</Link>
