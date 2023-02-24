@@ -54,7 +54,7 @@ const usersList = useSelector((state) => state.usersData);
 					<a href="./contact" className={styles.card}>
 						<h2>NEW PAGE &rarr;</h2>
 						<p>
-							Find in-depth information about Next.js features and API.
+							{/* Find in-depth information about Next.js features and API. */}
 						</p>
 					</a>
 				</div>
