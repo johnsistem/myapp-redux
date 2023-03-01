@@ -41,7 +41,7 @@ const usersList = useSelector((state) => state.usersData);
 		<div>
 			esto otro es de nuevo-rama
 			esto es de main
-			esto es de la nuevo-rama
+			esto va de main
 		</div>
 	);
 }
